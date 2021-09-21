@@ -1,0 +1,245 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "People",
+    "description": "<p>People Api </p>",
+    "termsOfService": "https://flowstep.com/contact-us",
+    "contact": {
+      "name": "FS Demo",
+      "email": "david@flowstep.com"
+    },
+    "license": {
+      "name": "https://flowstep.com/contact-us",
+      "url": "https://flowstep.com/contact-us"
+    },
+    "version": "1.0.0.32",
+    "x-api-id": "08d97c94-fc93-d6c7-10e8-8ad82844f069"
+  },
+  "servers": [
+    {
+      "url": "https://api-dev.ba-industries.com.au",
+      "variables": {
+        "basePath": {
+          "default": "/v1"
+        },
+        "protocol": {
+          "default": "http",
+          "enum": [
+            "https"
+          ]
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/people": {
+      "post": {
+        "tags": [
+          "People"
+        ],
+        "summary": "Create Person",
+        "operationId": "create-person",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Person",
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "title": "First Name",
+                    "type": "string",
+                    "example": "John"
+                  },
+                  "lastName": {
+                    "title": "Last Name",
+                    "type": "string",
+                    "example": "Smith"
+                  }
+                },
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/person"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "summary": "List People",
+        "operationId": "list-people",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "example": 20
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "title": "Offset",
+              "type": "integer",
+              "example": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Payload",
+                  "type": "object",
+                  "properties": {
+                    "numberOfItems": {
+                      "title": "Number of Items",
+                      "type": "integer",
+                      "example": 566
+                    },
+                    "items": {
+                      "title": "items",
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/person"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/people/{personId}": {
+      "put": {
+        "tags": [
+          "People"
+        ],
+        "summary": "Update Person by ID",
+        "operationId": "update-person-by-id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/person"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/person"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "People"
+        ],
+        "summary": "Delete Person by ID",
+        "operationId": "delete-person-by-id",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "title": "Person ID",
+              "type": "integer",
+              "description": "",
+              "example": 12134
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Payload",
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "summary": "Get person by id",
+        "operationId": "get-person-by-id",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Payload",
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "person": {
+        "title": "Person",
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "title": "First Name",
+            "type": "string",
+            "example": "John"
+          },
+          "lastName": {
+            "title": "Last Name",
+            "type": "string",
+            "example": "Smith"
+          },
+          "personId": {
+            "title": "Person ID",
+            "type": "integer",
+            "description": "",
+            "example": 12134
+          }
+        },
+        "description": ""
+      }
+    }
+  }
+}
