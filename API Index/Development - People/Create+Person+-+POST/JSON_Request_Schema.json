@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Person",
+  "description": "",
+  "x-pii": false,
+  "x-sensitive": false,
+  "x-ref": "08d97c95-5c8b-adae-14ca-2ee566fa3433",
+  "x-refVersion": "08d97c97-8e7a-a796-2193-ae648c24d5bc",
+  "x-ref-model-version": 3,
+  "x-refVersion-latest": "08d97c97-8e7a-a796-2193-ae648c24d5bc",
+  "x-ref-model-version-latest": 3,
+  "name": "person",
+  "x-exclude": [
+    "personId"
+  ],
+  "x-refPayLoadVersion": "08d97c97-8e7a-a796-2193-ae648c24d5bc",
+  "x-refPayLoadVersionNumber": 3,
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "title": "First Name",
+      "x-ref": "08d97c95-5c8f-1b94-0701-d84c1c53e8d6",
+      "x-refVersion": "08d97c95-5c8d-7991-6596-12881e1fc440",
+      "x-ref-model-version": 1,
+      "x-refVersion-latest": "08d97c95-5c8d-7991-6596-12881e1fc440",
+      "x-ref-model-version-latest": 1,
+      "name": "firstName",
+      "examples": [
+        "John"
+      ],
+      "type": "string"
+    },
+    "lastName": {
+      "title": "Last Name",
+      "x-ref": "08d97c95-5c9a-972f-f7a4-717564a6de8b",
+      "x-refVersion": "08d97c95-5c98-f364-d941-9e2312806c8a",
+      "x-ref-model-version": 1,
+      "x-refVersion-latest": "08d97c95-5c98-f364-d941-9e2312806c8a",
+      "x-ref-model-version-latest": 1,
+      "name": "lastName",
+      "examples": [
+        "Smith"
+      ],
+      "type": "string"
+    }
+  }
+}
