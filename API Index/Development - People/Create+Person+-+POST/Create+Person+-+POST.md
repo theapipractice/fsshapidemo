@@ -12,7 +12,7 @@ POST /v1/people
 | HTTP Method                           | Post|
 | ------------------------------------- | ----------------------------------------------- |
 | API                                   | People                                           |
-| Api Version                           | 1.0.0.32                                         |
+| Api Version                           | 1.0.0.33                                         |
 | Resource Version                      | 1                                               |
 | Summary                               |                                       |
 | Base Path                             | /v1/people                                     |
