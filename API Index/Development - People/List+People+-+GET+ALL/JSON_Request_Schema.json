@@ -1,8 +1,0 @@
-{
-  "title": "Request Payload",
-  "IsPayload": true,
-  "name": "requestPayload",
-  "x-refPayLoadVersion": "08d97c95-a9d0-26ed-78f3-0ab769f7fa7a",
-  "x-refPayLoadVersionNumber": 1,
-  "type": "object"
-}
