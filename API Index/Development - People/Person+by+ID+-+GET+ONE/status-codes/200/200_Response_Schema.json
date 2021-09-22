@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Person",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "title": "First Name",
+      "type": "string"
+    },
+    "lastName": {
+      "title": "Last Name",
+      "type": "string"
+    },
+    "personId": {
+      "title": "Person ID",
+      "description": "",
+      "type": "integer"
+    }
+  }
+}
