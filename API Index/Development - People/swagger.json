@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "People",
-    "description": "<p>People Api </p>",
+    "description": "<p>People API with CRUD operations</p>",
     "termsOfService": "https://flowstep.com/contact-us",
     "contact": {
       "name": "FS Demo",
@@ -12,7 +12,7 @@
       "name": "https://flowstep.com/contact-us",
       "url": "https://flowstep.com/contact-us"
     },
-    "version": "1.0.0.33",
+    "version": "1.0.0.40",
     "x-api-id": "08d97c94-fc93-d6c7-10e8-8ad82844f069"
   },
   "servers": [
@@ -137,6 +137,20 @@
         ],
         "summary": "Update Person by ID",
         "operationId": "update-person-by-id",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "title": "Person ID",
+              "type": "integer",
+              "description": "",
+              "example": 12134
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -197,16 +211,29 @@
         "tags": [
           "People"
         ],
-        "summary": "Get person by id",
-        "operationId": "get-person-by-id",
+        "summary": "Person by ID",
+        "operationId": "person-by-id",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "title": "Person ID",
+              "type": "integer",
+              "description": "",
+              "example": 12134
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Response Payload",
-                  "type": "object"
+                  "$ref": "#/components/schemas/person"
                 }
               }
             }
